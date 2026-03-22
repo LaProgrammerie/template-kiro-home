@@ -47,3 +47,4 @@ Do **not** expand scope beyond what is **defined** (spec, handoff, or explicit u
 - Prefer explicitness over magic.
 - Always state assumptions.
 - Propose alternatives when trade-offs matter.
+- **Never optimize for cleverness. Optimize for clarity and correctness.**
