@@ -1,11 +1,11 @@
-# template-kiro-home
+# ai-engineering-core
 
 **Global, reusable AI engineering layer** for [Kiro](https://kiro.dev) (and compatible agents): steering + procedural skills that apply **across all your repos**.
 
 > **In three lines:** Spec defines intent. Handoff defines execution. Code must follow the handoff.
 
 This is **not** your product codebase — it is the **portable discipline** you sync into `~/.kiro/`.  
-Per-repo structure (canon docs, active spec, Cursor rules) lives in **[template-generic-project](https://github.com/LaProgrammerie/template-generic-project)**.
+Per-repo structure (canon docs, active spec, Cursor rules) lives in **[ai-engineering-template](https://github.com/LaProgrammerie/ai-engineering-template)**.
 
 ---
 
@@ -18,23 +18,23 @@ Per-repo structure (canon docs, active spec, Cursor rules) lives in **[template-
 
 Together they form the **home** half of an **AI engineering framework**:
 
-- **`template-kiro-home`** → global runtime (`~/.kiro`)
-- **[`template-generic-project`](https://github.com/LaProgrammerie/template-generic-project)** → project runtime (`AGENTS.md`, `docs/ai/`, `.kiro/specs/`, `.cursor/`)
+- **`ai-engineering-core`** → global runtime (`~/.kiro`)
+- **[`ai-engineering-template`](https://github.com/LaProgrammerie/ai-engineering-template)** → project runtime (`AGENTS.md`, `docs/ai/`, `.kiro/specs/`, `.cursor/`)
 
 ### How the two halves connect
 
 ```mermaid
 flowchart LR
-  TKH["template-kiro-home"] -->|"./sync-to-home.sh"| HOME["~/.kiro<br/>steering + skills"]
+  AEC["ai-engineering-core"] -->|"./sync-to-home.sh"| HOME["~/.kiro<br/>steering + skills"]
   HOME --> AGENTS["Kiro / agents"]
-  TGP["template-generic-project"] -->|"repo template"| REPO["Product repository"]
+  AET["ai-engineering-template"] -->|"repo template"| REPO["Product repository"]
   AGENTS --> REPO
   REPO --> SPEC["Spec<br/>.kiro/specs · current-spec.md"]
   SPEC --> HO["handoff.md"]
   HO --> CODE["Code"]
 ```
 
-**One line:** `template-kiro-home` → `~/.kiro` → (every repo bootstrapped from) `template-generic-project` → **spec** → **handoff** → **code**.
+**One line:** `ai-engineering-core` → `~/.kiro` → (every repo bootstrapped from) `ai-engineering-template` → **spec** → **handoff** → **code**.
 
 ---
 
@@ -54,8 +54,8 @@ flowchart LR
 1. **Clone** (anywhere on disk):
 
 ```bash
-git clone git@github.com:LaProgrammerie/template-kiro-home.git
-cd template-kiro-home
+git clone git@github.com:LaProgrammerie/ai-engineering-core.git
+cd ai-engineering-core
 ```
 
 2. **Ensure** Kiro has created `~/.kiro` at least once (open Kiro / sign in if needed).
@@ -72,7 +72,7 @@ chmod +x sync-to-home.sh
 ### Verify
 
 - In Kiro, confirm global steering/skills are loaded (per Kiro’s UI or docs — there is no single `kiro doctor` CLI guaranteed on all installs).
-- Optionally open a repo that uses [`template-generic-project`](https://github.com/LaProgrammerie/template-generic-project) and check that behaviour matches `steering/00-index.md` (repo wins over global when they conflict).
+- Optionally open a repo that uses [`ai-engineering-template`](https://github.com/LaProgrammerie/ai-engineering-template) and check that behaviour matches `steering/00-index.md` (repo wins over global when they conflict).
 
 ---
 
@@ -83,7 +83,7 @@ Activate or invoke the **skill** that matches the situation (exact invocation de
 | Situation | Skill | What it does |
 |-----------|--------|----------------|
 | Break down a goal before spec / code | **`planning`** | Structured plan, reusable for requirements → design → tasks |
-| Prepare or refresh execution scope | Use your **project** skill `create-handoff` in `.kiro/skills/` (from template-generic-project) — global layer sets *discipline*; handoff file lives in the repo |
+| Prepare or refresh execution scope | Use your **project** skill `create-handoff` in `.kiro/skills/` (from **ai-engineering-template**) — global layer sets *discipline*; handoff file lives in the repo |
 | Review a PR / diff | **`code-review`** | Correctness, security, tests; checks **handoff** + **architecture** + **standards** when those files exist |
 | Something is broken | **`debugging`** | Reproduce, narrow, fix; flags **spec vs code** and **stale handoff** |
 | Safe cleanup | **`refactor`** | Small steps; **no scope creep** outside handoff |
@@ -113,9 +113,9 @@ Narrative walkthrough (same story, more detail): [`examples/flow-login.md`](exam
 
 | Repository | Role |
 |------------|------|
-| **[template-generic-project](https://github.com/LaProgrammerie/template-generic-project)** | Project template: `AGENTS.md`, `docs/ai/`, `.kiro/specs/`, `.cursor/`, `examples/` |
+| **[ai-engineering-template](https://github.com/LaProgrammerie/ai-engineering-template)** | Project template: `AGENTS.md`, `docs/ai/`, `.kiro/specs/`, `.cursor/`, `examples/` |
 
-Clone both: sync **this** repo → `~/.kiro`; use **template-generic-project** as the root of each product repo.
+Clone both: sync **this** repo → `~/.kiro`; use **ai-engineering-template** as the root of each product repo.
 
 ---
 
@@ -144,5 +144,5 @@ Project **`AGENTS.md`** and project **`.kiro/`** override global steering when t
 
 Set on the repo **About** settings (or use `gh repo edit`):
 
-- **Description:** `Global Kiro steering + skills — portable AI engineering layer. Pairs with template-generic-project (spec → handoff → code).`
+- **Description:** `Global Kiro steering + skills — portable AI engineering layer. Pairs with ai-engineering-template (spec → handoff → code).`
 - **Topics:** `kiro`, `ai`, `template`, `developer-tools`, `workflow`, `context-engineering`, `spec-driven-development`, `agent-skills`, `steering`, `documentation`

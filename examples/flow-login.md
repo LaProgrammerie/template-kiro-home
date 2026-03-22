@@ -1,6 +1,6 @@
 # Example: global skills × project template (login)
 
-This file is **narrative only** — it shows how **template-kiro-home** (global) and **template-generic-project** (repo) work together.
+This file is **narrative only** — it shows how **ai-engineering-core** (global) and **ai-engineering-template** (repo) work together.
 
 1. **User:** “Add email/password login.”
 2. **Global `planning` skill:** break down phases (auth API, storage, sessions, UI), risks, unknowns — output feeds Kiro spec authoring in the **project** repo.
