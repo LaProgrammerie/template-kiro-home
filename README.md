@@ -5,7 +5,8 @@
 > **In three lines:** Spec defines intent. Handoff defines execution. Code must follow the handoff.
 
 This is **not** your product codebase — it is the **portable discipline** you sync into `~/.kiro/`.  
-Per-repo structure (canon docs, active spec, Cursor rules) lives in **[ai-engineering-template](https://github.com/LaProgrammerie/ai-engineering-template)**.
+Per-repo structure (canon docs, active spec, Cursor rules) lives in **[ai-engineering-template](https://github.com/LaProgrammerie/ai-engineering-template)**.  
+**Framework overview (both layers):** [ai-engineering-framework](https://github.com/LaProgrammerie/ai-engineering-framework).
 
 ---
 
