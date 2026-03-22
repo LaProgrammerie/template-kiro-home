@@ -21,6 +21,21 @@ Together they form the **home** half of an **AI engineering framework**:
 - **`template-kiro-home`** → global runtime (`~/.kiro`)
 - **[`template-generic-project`](https://github.com/LaProgrammerie/template-generic-project)** → project runtime (`AGENTS.md`, `docs/ai/`, `.kiro/specs/`, `.cursor/`)
 
+### How the two halves connect
+
+```mermaid
+flowchart LR
+  TKH["template-kiro-home"] -->|"./sync-to-home.sh"| HOME["~/.kiro<br/>steering + skills"]
+  HOME --> AGENTS["Kiro / agents"]
+  TGP["template-generic-project"] -->|"repo template"| REPO["Product repository"]
+  AGENTS --> REPO
+  REPO --> SPEC["Spec<br/>.kiro/specs · current-spec.md"]
+  SPEC --> HO["handoff.md"]
+  HO --> CODE["Code"]
+```
+
+**One line:** `template-kiro-home` → `~/.kiro` → (every repo bootstrapped from) `template-generic-project` → **spec** → **handoff** → **code**.
+
 ---
 
 ## Why use it
@@ -122,3 +137,12 @@ Clone both: sync **this** repo → `~/.kiro`; use **template-generic-project** a
 ## Conflict rule
 
 Project **`AGENTS.md`** and project **`.kiro/`** override global steering when they conflict — see `steering/00-index.md`.
+
+---
+
+## GitHub repository metadata (suggested)
+
+Set on the repo **About** settings (or use `gh repo edit`):
+
+- **Description:** `Global Kiro steering + skills — portable AI engineering layer. Pairs with template-generic-project (spec → handoff → code).`
+- **Topics:** `kiro`, `ai`, `template`, `developer-tools`, `workflow`, `context-engineering`, `spec-driven-development`, `agent-skills`, `steering`, `documentation`
